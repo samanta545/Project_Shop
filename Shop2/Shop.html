@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  </head>
+  <body style="background-color: antiquewhite;">
+    <nav class="navbar navbar-expand-lg sticky-top bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Shop</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Главная страница</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#Partnership">Партнёрсто</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Продукты компании
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#Catalog">Каталог</a></li>
+                  <li><a class="dropdown-item" href="#">Коммерческое предложение</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Подписка</a></li>
+                  <li><a class="dropdown-item" href="#Delivery">Доставка по всей России</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#About">О нас</a>
+              </li>
+            </ul>
+          
+          </div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="item data-counter position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" data-counter>0</div>
+                <svg type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                  
+                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>                   
+                  </svg>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight1" aria-controls="offcanvasRight1">Вход</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" aria-controls="offcanvasRight2">Регистрация</a></li>
+              </ul>
+            </li>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Найти</button>
+            </form>
+          </ul>
+        </div>
+      </nav>
+         <!-- Корзина -->
+      <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+         <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Корзина</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+      <div data-cart-empty class="offcanvas-body">
+         <a class="btn" data-action="minus">X</a>
+      </div>
+      <a class="btn btn-primary">Купить</a>
+    </div>
+
+      <!-- Вход -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel1">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel1">Вход</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email </label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Пароль</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Войти</button>
+          </form>
+        </div>
+      </div>
+            <!-- Регистрация -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight2" aria-labelledby="offcanvasRightLabel2">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel2">Регистрация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="exampleInputUsername" class="form-label">Имя пользователя</label>
+                    <input type="text" class="form-control" id="exampleInputUsername">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword" class="form-label">Пароль</label>
+                    <input type="password" class="form-control" id="exampleInputPassword">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleConfirmPassword" class="form-label">Подтвердите пароль</label>
+                    <input type="password" class="form-control" id="exampleConfirmPassword">
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck">
+                    <label class="form-check-label" for="exampleCheck">Проверить меня</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Регистрация</button>
+                </form>
+              </div>
+            </div>
+         <!-- Партнёрсто-->     
+         <main id="Partnership">     
+          <div class="container py-4">
+            <div class="row align-items-md-stretch">
+             <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+              <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Партнёрсто</h1>
+                <p class="col-md-8 fs-4">Маркетплейс, входящий в пятерку лидеров в России, приглашает к сотрудничеству блогеров, которые готовы распространять промокоды и делиться ссылками на товары со своей аудиторией. В программе могут участвовать блогеры, располагающие страницей в Дзене, ВКонтакте или Одноклассниках, а также в Телеграм и на других площадках.</p>
+                <button class="btn btn-primary btn-lg" type="button">Стать партнёром</button>
+              </div>
+            </div>
+          
+        </main>
+
+        <!-- Карточки товаров -->
+        
+       <section>
+        <div class="container text-center ">
+          <h1 class="text-center" id="Catalog">Каталог</h1>
+          <div class="row">
+            <div class="col g-5">
+              <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                <img src="/img/2.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a class="nav-link active" data-action="plus"role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card" style="width: 18rem;">
+                <img src="/img/1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h2>Тут мы покажем вашу рекламу </h2>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                <img src="/img/3.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Сохрнить</a>
+                  <a class="nav-link active" data-action="plus" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button"  data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                <img src="/img/4.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a class="nav-link active" data-action="plus" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button"  data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                <img src="/img/5.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a class="nav-link active" data-action="plus" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card" style="width: 18rem;">
+                <img src="/img/1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h2>Тут мы покажем вашу рекламу </h2>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                <img src="/img/6.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a class="nav-link active" data-action="plus" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                <img src="/img/7.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a class="nav-link active" data-action="plus" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card" style="width: 18rem;">
+                <img src="/img/1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h2>Тут мы покажем вашу рекламу </h2>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                <img src="/img/8.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a class="nav-link active" data-action="plus" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card" style="width: 18rem;">
+                <img src="/img/1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h2>Тут мы покажем вашу рекламу </h2>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                <img src="/img/9.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a class="nav-link active" data-action="plus" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col g-5">
+              <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                <img src="/img/10.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a class="nav-link active" data-action="plus" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button"  data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                <img src="/img/11.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a class="nav-link active" data-action="plus" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button"  data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col g-5">
+              <div class="card " style="width: 18rem;">
+                <img src="/img/12.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make  title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a class="nav-link active" data-action="plus" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg type="button" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="35" height="50" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </section>
+       <h1 style="text-align: center;" id="Delivery">Онлайн оформление посылок </h1>
+       <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="mask flex-center">
+              <div class="container">
+                <div class="row align-items-center">
+                  <div class="col-md-7 col-12 order-md-1 order-2">
+                    <br>
+                    <h3>Быстро</h3>
+                     <p>Заполните адресные данные и оплатите онлайн. Запишитесь в отделение,<br> чтобы сдать посылку оператору без очереди..</p>
+                    <h3>Удобно</h3>
+                      <p>Различные способы оплаты, дополнительные услуги, отслеживание посылки на всех этапах доставки в вашем личном кабинете. <br>
+                    <h3>Выгодно</h3>
+                      <p>Копите и оплачивайте посылки бонусами, экономьте на доставке.</p>
+                    <h3>Безопасно</h3>
+                      <p>Ваши персональные данные защищены, а автоматические подсказки позволят избежать ошибок в адресах. <br>         
+                      <button class="btn button btn-warning ">Оформить посылку </button>
+                  </div>
+                  <div class="col-md-5 col-12 order-md-2 order-1"><div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="/img/13.avif" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/img/14.avif" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/img/15.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <footer id="About" s>
+          <section class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3 col-6">
+                  <h5>Информация</h5>
+                  <ul class="list-unstyled">
+                    <li>Главная</li>
+                    <li>О нас</li>          
+                  </ul>
+                </div>
+                <div class="col-md-3 col-6">
+                  <h5>Время работы </h5>
+                  <ul class="list-unstyled">
+                    <li>г. Москва ул.Московская 1</li>
+                    <li> Пн-Вс C 10:00 до 22:00</li>
+                    <li>Без перерывов и выходных</li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-6">
+                  <h5>Сайты партнёров</h5>
+                  <ul class="list-unstyled">
+                    <li>Google</li>
+                    <li>Яндекс</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </footer>
+        
+   <script src="/Script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
